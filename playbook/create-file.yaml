@@ -1,0 +1,15 @@
+---
+- name: Buat Folder dan File Contoh
+  hosts: localhost
+  tasks:
+    - name: Buat Folder Contoh
+      file:
+        path: "/lokasi/folder/contoh"
+        state: directory
+      become: yes
+
+    - name: Buat File Contoh.txt
+      file:
+        path: "/lokasi/folder/contoh/contoh.txt"
+        state: touch
+      become: yes
